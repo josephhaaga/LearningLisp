@@ -21,6 +21,8 @@
 )
 
 ; When and unless statements have implicit progns
+; however, they only allow for one branch
+
 (defvar *number-is-odd* nil)
 (defun run3()
 	(when (oddp 5)
@@ -33,5 +35,14 @@
 		(setf *number-is-odd* nil)
 		'even-number
 		)
+
+)
+
+; Cond can handle more than one branch
+(defvar *arch-enemy* nil)
+(defun pudding-eater(person)
+	(cond ((eq person 'johnny) (setf *arch-enemy* 'useless-old-johnny) '(i hope you choked on my pudding johnny))
+		  ((eq person 'tommy) (setf *arch-enemy* 'silly-tommy) '(c\'mon tommy))
+		  (t '(whyd you eat my pudding?)))
 
 )
