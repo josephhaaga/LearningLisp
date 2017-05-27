@@ -19,3 +19,19 @@
 			(/ 1 0)
 		)
 )
+
+; When and unless statements have implicit progns
+(defvar *number-is-odd* nil)
+(defun run3()
+	(when (oddp 5)
+	 	(setf *number-is-odd* t) 
+		'odd-number)
+)
+
+(defun run4()
+	(unless (oddp 4)
+		(setf *number-is-odd* nil)
+		'even-number
+		)
+
+)
