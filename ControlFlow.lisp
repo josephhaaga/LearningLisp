@@ -46,3 +46,12 @@
 		  (t '(whyd you eat my pudding?)))
 
 )
+
+; The case form is a more-readable version of cond
+(defun dog-walker(person)
+	(case person
+		((johnny) '(thanks johnny!))
+		((jeff) '(you the man jeff!))
+		(otherwise '(give me my dog back i dont know you))
+	)
+)
