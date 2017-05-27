@@ -55,3 +55,19 @@
 		(otherwise '(give me my dog back i dont know you))
 	)
 )
+
+; You can use and & or operators as conditionals
+(defparameter *four-is-even* nil)
+(defun is-four-even()
+	(or (oddp 4) (setf *four-is-even* t))
+	; (*some-variable*)
+
+)
+
+; Nested if statements can be replaced by an 'and'
+
+(defparameter *file-modified* t)
+(defparameter *ask-user-about-saving* t)
+(defun save-file()
+	(and *file-modified* *ask-user-about-saving* '(saving))
+)
